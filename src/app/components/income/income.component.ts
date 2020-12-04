@@ -26,7 +26,7 @@ export class IncomeComponent implements OnInit {
     return this.validatingForm.get('expenseAmount');
   }
 
-
+// ADDING DATA IN LOCAL STORAGE
   add(){
     console.log(this.validatingForm.value)
 

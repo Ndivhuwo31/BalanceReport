@@ -9,11 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  myData : any;
+  myData : any=[];
   constructor() { }
 
   ngOnInit(): void {
-    this.myData = JSON.parse(localStorage.getItem('transaction'))
+    this.myData = JSON.parse(localStorage.getItem('transactions'));
+
+    console.log(this.myData)
 
 
   }

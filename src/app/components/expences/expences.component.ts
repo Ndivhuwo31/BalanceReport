@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
@@ -9,7 +10,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class ExpencesComponent implements OnInit {
   validatingForm: FormGroup;
-
+annie:any[] = [];
   constructor() { }
 
   ngOnInit() {
@@ -20,22 +21,28 @@ export class ExpencesComponent implements OnInit {
 
   }
 
-
+// GETTING ITEMS FROM LOCAL STORAGE
   get expenseDescription() {
     return this.validatingForm.get('expenseDescription');
   }
-
+// GETTING AMOUNT FROM LOCAL STORAGE
   get expenseAmount() {
     return this.validatingForm.get('expenseAmount');
   }
 
+// ADDING DATA IN LOCAL STORAGE
 
   add(){
-    console.log(this.validatingForm.value)
 
-localStorage.setItem("transactions" , JSON.stringify(this.validatingForm.value))
+if(localStorage.length > 0){
+  this.annie = JSON.parse(localStorage.getItem('transactions'));
+  this.annie.push(this.validatingForm.value);
+
+   localStorage.setItem("transactions", JSON.stringify(this.annie));
+
+}
+else{localStorage.setItem("transactions", JSON.stringify(this.annie));}
 
 
-  }
-
+}
 }
