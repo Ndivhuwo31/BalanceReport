@@ -32,5 +32,10 @@ export class ExpencesComponent implements OnInit {
 
   add(){
     console.log(this.validatingForm.value)
+
+localStorage.setItem("transactions" , JSON.stringify(this.validatingForm.value))
+
+
   }
+
 }
