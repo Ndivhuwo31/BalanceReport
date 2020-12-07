@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TestComponent } from './components/test/test.component';
 import { ExpencesComponent } from './components/expences/expences.component';
+import { BalanceComponent } from './components/balance/balance.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ExpencesComponent } from './components/expences/expences.component';
     HomeComponent,
     NavbarComponent,
     TestComponent,
-    ExpencesComponent
+    ExpencesComponent,
+    BalanceComponent
   ],
   imports: [
     BrowserModule,
