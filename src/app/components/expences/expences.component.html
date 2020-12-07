@@ -2,6 +2,12 @@
   <div>
     <!-- Default form subscription -->
 <form class="text-center border border-light p-5">
+  <select [formControl]="transactionType" class="browser-default custom-select mb-3">
+    <option value="" disabled selected>Transaction Type</option>
+    <option value="income">Income</option>
+    <option value="expences">Expences</option>
+
+  </select>
 
   <!-- Description -->
   <input type="text" id="defaultSubscriptionFormPassword" [formControl]="expenseDescription" class="form-control mb-4" placeholder="Description">
@@ -17,4 +23,5 @@
 <!-- Default form subscription -->
   </div>
 </div>
+
 

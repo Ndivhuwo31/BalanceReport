@@ -16,8 +16,13 @@ annie:any[] = [];
   ngOnInit() {
     this.validatingForm = new FormGroup({
       expenseDescription: new FormControl('', Validators.required),
-      expenseAmount: new FormControl('', Validators.required)
+      expenseAmount: new FormControl('', Validators.required),
+      transactionType: new FormControl('', Validators.required)
     });
+
+  }
+  get transactionType() {
+    return this.validatingForm.get('transactionType');
 
   }
 

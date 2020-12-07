@@ -16,16 +16,28 @@
 </mdb-card>
 
 <br>
+<div class="row">
+  <h4 class="col-8">Transaction History</h4>
+<button type="button" mdbBtn color="light" class="col-4" routerLink="/expense" mdbWavesEffect>Add</button>
+</div>
 
 <!-- trasnsactions -->
-<mdb-card>
+<mdb-card class="mt-3" *ngFor="let item of myData">
   <mdb-card-body>
-    <mdb-card-title>
-      <h3>Transactions</h3>
+    <mdb-card-title class="row">
+      <h4 class="col-8">{{item.transactionType}}</h4>
+      <small class="col-4 mt-2">date</small>
     </mdb-card-title>
-    <mdb-card-text>{{myData.expenseDescription}}    </mdb-card-text>
-    <a routerLink="/income" class="card-link">+ Income</a>
-    <a routerLink="/expense" class="card-link">- Expense</a>
+    <mdb-card-text>
+    {{item.expenseDescription}}
+    </mdb-card-text>
+    <mdb-card-text>R
+      {{item.expenseAmount}}.00
+      </mdb-card-text>
+    <div class="flex-row">
+      <a class="card-link">update</a>
+      <a class="card-link">delete</a>
+    </div>
   </mdb-card-body>
 </mdb-card>
 
